@@ -1,0 +1,56 @@
+Repo: boolean-uk-api-data-models
+
+Description
+Build a Fashion Company's event management software. Build CRUD in the controllers and practice writing Prisma queries that involve relationships between models
+
+Instructions
+- Create an express app from scratch.
+- Remember to include Prisma, Dotenv and Morgan as dependecies
+- Create a new Database in ElephantSQL, and grab the URL:
+    -- in ElephantSQL
+    -- in the details section.
+- Create a shadow Database in ElephantSQL, and grab the URL too!
+- Build the models and controllers for Models, Outfits, Designers, Events and Guests
+- Read the requirements to determine what's being asked to you 
+- Focus on the relationships give each model a few basic properties 
+- Draw out your data models on draw.io/piece of paper and share it in the classroom (optional)
+
+Requirements
+
+-Build the models with the following requirements:
+    - A Designer will create Outfits
+    - A Designer will present the outfits at an Event using Models
+    - A Model will present different Outfits at an Event
+    - A Guest can attend Events
+    - A Guest can buy Outfits
+    - An Outfit should have a season
+
+- Create CRUD operations for each model.
+
+- Create additional routes for:
+    - events/:event-name/models which returns the models for an event with a specific name
+    - events/:event-name/designers which returns the designers whose outfits will be shown at the event with a specific name
+
+    - events/:event-name/guests which returns the designers whose outfits will be shown at the event with a specific name
+    - guests/:id/purchases which returns the purchases made by this guest
+    - guests/:id/total-spent which returns the total spent by this guest
+    - models/:id/outfits which returns the outfits this model presented
+
+- Create a seed file with some mock data. Don't spend too much time on this!(edited)
+[13:32]
+@here
+Tips
+- Use ElephantSQL to test your SQL queries and see if they are returning what you want before adding them to the code.
+- Use the docs extensively. You will find the answers to all the queries there.
+
+Challenge
+
+Create a /calendar route that:
+    - returns an object:
+        - where the keys are the date of the event "2021-10-08"
+        - where the values are an object with details of the event
+        - an it should be ordered from soonest to latest
+    - the object with details of the event should have:
+        - a list of models for the event
+        - a list of designers whose outfits will be shown at the event
+        - the number of guests who will be attending the event
